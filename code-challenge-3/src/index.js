@@ -98,6 +98,7 @@ function movieLIst() {
             "Content-Type": "application/json",
             "Accept" : "application/json"
         }
+        console.log(movieLIst)
 
 
     })
