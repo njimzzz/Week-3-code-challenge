@@ -9,6 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "db-json": "^0.1.0"
-  }
+    "cors": "^2.8.5",
+    "db-json": "^0.1.0",
+    "json-serve": "^0.1.0"
+  },
+  "keywords": []
 }

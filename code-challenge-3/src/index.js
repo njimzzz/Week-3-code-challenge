@@ -74,6 +74,8 @@ function displayMovies (films) {
    })
  }
 
+
+
  const btn = document.querySelector("#buyTicket")
     btn.addEventListener("click", (event) => {
         
@@ -89,6 +91,18 @@ function displayMovies (films) {
 
     })
 
+function movieLIst() {
+    return fetch("http://localhost:3000/films", {
+        method : "GET" ,
+        headers : {
+            "Content-Type": "application/json",
+            "Accept" : "application/json"
+        }
+
+
+    })
+}
+
 function movieList () {
     return fetch("http://localhost:3000/films",{
         method:"GET",
@@ -100,3 +114,15 @@ function movieList () {
     .then(resp => resp.json())
     .then(data => data)
 }
+
+
+const jsonServer = require("json-server"); 
+const server = jsonServer.create();
+const router = jsonServer.router("db.json");
+const middlewares = jsonServer.defaults();
+const port = process.env.PORT || 3000;
+
+server.use(middlewares);
+server.use(router);
+
+server.listen(port);
